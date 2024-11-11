@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to my portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <!--------------------------------------------------------------- NAVBAR ------------------------------------------------------------------>
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">Urja<span>.</span></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#home" class="section-link">Home</a></li>
+          <li><a href="#about" class="section-link">About</a></li>
+          <li><a href="#skills" class="section-link">Skills</a></li>
+          <li><a href="#services" class="section-link">Latest Projects</a></li>
+          <li><a href="#contact" class="section-link">Contact</a></li>
+        </ul>
+        <div class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+    <!--------------------------------------------------------------- HOME  ------------------------------------------------------------------>
+
+    <section class="home" id="home">
+      <div class="max-width">
+        <div class="home-content">
+          <div class="text-1">Hello, I am</div>
+          <div class="text-2">Urja Angre</div>
+          <div class="text-3">Frontend Developer</div>
+          <a href="#contact">Contact me</a>
+        </div>
+        <div class="my-pic">
+          <div class="Pimg">
+            <img src="Assets/Portfolio pic1.png" alt="" class="profile-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------------------------- ABOUT ------------------------------------------------------------------>
+    <section class="about" id="about">
+      <div class="max-width">
+        <h2 class="title">About Me</h2>
+        <div class="about-content">
+          <div class="column left">
+            <img src="Assets/aboutme.jpeg" alt="" />
+          </div>
+          <div class="column right">
+            <div class="text">
+              I'm Urja, and I'm a <span>Frontend Developer.</span>
+            </div>
+            <p>
+              I’m a web development enthusiast from Bangalore, proficient in
+              various frontend technolgies. I am proficient in building static
+              websites and am currently learning React and backend technologies
+              as I work towards my goal of becoming a full-stack developer.
+              Along with my technical skills, I’m a strong communicator. I'm
+              highly motivated, with a strong focus on continuous learning and
+              growth
+            </p>
+            <a href="#about" id="download-cv">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------------------------- SKILLS ------------------------------------------------------------------>
+    <section class="skills" id="skills">
+      <div class="max-width">
+        <h2 class="title">My Skills</h2>
+        <div class="skills-content">
+          <div class="column left">
+            <div class="text">My Technical Skills:</div>
+            <p>
+              I'm a front-end developer proficient in HTML, CSS, JavaScript, and
+              frameworks like Tailwind and Bootstrap. I specialize in creating
+              responsive, visually appealing static websites. I’m skilled in
+              crafting user-friendly designs and am continually advancing my
+              knowledge in modern web development technologies to enhance my
+              work.
+            </p>
+          </div>
+          <div class="column right">
+            <div class="container">
+              <div class="box">
+                <div class="circular-progress" id="circular-progress1">
+                  <span class="progress-value" id="progress-value1">0%</span>
+                </div>
+
+                <span class="text">HTML</span>
+              </div>
+              <div class="box">
+                <div class="circular-progress" id="circular-progress2">
+                  <span class="progress-value" id="progress-value2">0%</span>
+                </div>
+
+                <span class="text">CSS</span>
+              </div>
+              <div class="box">
+                <div class="circular-progress" id="circular-progress3">
+                  <span class="progress-value" id="progress-value3">0%</span>
+                </div>
+
+                <span class="text">JavaScript</span>
+              </div>
+              <div class="box">
+                <div class="circular-progress" id="circular-progress4">
+                  <span class="progress-value" id="progress-value4">0%</span>
+                </div>
+
+                <span class="text">Tailwind</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------------------------------------- PROJECTS ------------------------------------------------------------------>
+    <section class="services" id="services">
+      <div class="max-width">
+        <div class="title">Latest Projects</div>
+        <div class="serv-content">
+          <div class="card">
+            <div class="box">
+              <img src="Assets/medium.png" alt="" width="30" />
+              <a href="#" class="text" id="medium">
+                Live Preview <i class="fa-solid fa-eye"></i>
+              </a>
+            </div>
+            <p>Medium Clone (static)</p>
+          </div>
+          <div class="card">
+            <div class="box">
+              <img src="Assets/game.png" alt="" width="30" />
+              <a href="#" class="text" id="game">
+                Live Preview <i class="fa-solid fa-eye"></i>
+              </a>
+            </div>
+            <p>Rock-Paper-Scissors Game</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------------------------------------------- CONTACT ------------------------------------------------------------------>
+    <section class="contact" id="contact">
+      <div class="max-width">
+        <h2 class="title">Contact Me</h2>
+        <div class="contact-content">
+          <div class="column left">
+            <div class="text">Get in Touch</div>
+            <p>
+              Have a project in mind or need assistance with a website? I’m here
+              to help bring your ideas to life! Reach out, and let's create
+              something impactful.
+            </p>
+            <div class="icons">
+              <div class="row">
+                <i class="fas fa-user"></i>
+                <div class="info">
+                  <div class="sub-title">Urja Angre</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="info">
+                  <div class="sub-title">Bengaluru , Karnataka.</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fas fa-envelope"></i>
+                <div class="info">
+                  <a
+                    class="sub-title"
+                    id="emailAdd"
+                    href="mailto:urjaangre@gmail.com?subject=Hello&body=Hi, I'd like to connect with you!"
+                    >urjaangre@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="row">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <div class="info">
+                  <a href="" class="sub-title" id="linkdin">Urja Angre</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column right">
+            <div class="text">Message Me</div>
+            <form name="submit-to-google-sheet">
+              <div class="fields">
+                <div class="field name">
+                  <input
+                    type="text"
+                    id="name-field"
+                    placeholder="Your Name"
+                    required
+                    name="Name"
+                  />
+                </div>
+                <div class="field email">
+                  <input
+                    type="email"
+                    id="email-field"
+                    placeholder="Email"
+                    required
+                    name="Email"
+                  />
+                </div>
+              </div>
+              <div id="mail-error">*Please enter a valid email</div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="sub-field"
+                  placeholder="Subject"
+                  required
+                  name="Subject"
+                />
+              </div>
+              <div class="field textarea">
+                <textarea
+                  required
+                  id="msg-field"
+                  cols="30"
+                  rows="10"
+                  placeholder="Your message..."
+                  name="Message"
+                ></textarea>
+              </div>
+              <div id="msg-error">
+                *Please keep the message and subject only upto 60 characters.
+              </div>
+              <div class="button">
+                <button type="submit" id="submit">
+                  Send <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+              <div id="submitted-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------------------------- FOOTER ------------------------------------------------------------------>
+    <footer>
+      <span>&copy;urjaangre 2024. All rights reserved</span>
+    </footer>
+    <!-- Scroll Reveal JS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

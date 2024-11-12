@@ -335,14 +335,12 @@ section .title::after {
 .skills .skills-content .right .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
     border-radius: 8px;
     background: #fff;
     align-items: center;
     place-items: center;
     row-gap: 40px;
     text-align: center;
-    overflow: hidden;
 }
 
 .skills .skills-content .right .container .box {
@@ -755,10 +753,6 @@ footer span {
         margin-bottom: 35px;
     }
 
-    .skills .skills-content .left p {
-        max-width: 500px;
-    }
-
     .services .serv-content {
         grid-template-columns: 1fr;
     }
@@ -769,6 +763,14 @@ footer span {
 }
 
 @media (max-width: 600px) {
+    .skills .skills-content .column {
+        max-width: 90%;
+    }
+
+    .skills .skills-content .left p {
+        max-width: 100%;
+    }
+
     .skills .skills-content .right .container {
         grid-template-columns: repeat(2, 1fr);
     }

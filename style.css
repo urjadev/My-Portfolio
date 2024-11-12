@@ -330,19 +330,21 @@ section .title::after {
 .skills .skills-content .left p {
     text-align: justify;
     margin-bottom: 40px;
+    max-width: 90%;
 }
 
 .skills .skills-content .right .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 450px;
-    padding: 20px;
+    width: 100%;
+    max-width: 90%;
     border-radius: 8px;
     background: #fff;
     align-items: center;
     place-items: center;
     row-gap: 40px;
     text-align: center;
+    overflow: hidden;
 }
 
 .skills .skills-content .right .container .box {

@@ -328,10 +328,7 @@ section .title::after {
 }
 
 .skills .skills-content .left p {
-    max-width: 100%;
-    font-size: 16px;
     text-align: justify;
-    margin-bottom: 40px;
 }
 
 .skills .skills-content .right .container {

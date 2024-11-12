@@ -730,25 +730,6 @@ footer span {
     }
 }
 
-@media (max-width: 768px) {
-    .skills .skills-content {
-        flex-direction: column;
-    }
-
-    .skills .skills-content .column {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-
-    .skills .skills-content .left p {
-        font-size: 16px;
-    }
-
-    .skills .skills-content .right .container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 @media (max-width: 690px) {
     .max-width {
         padding: 0 23px;
@@ -764,6 +745,11 @@ footer span {
 
     .home .home-content .text-3 {
         font-size: 32px;
+    }
+
+    .skills .skills-content .column {
+        width: 100%;
+        margin-bottom: 35px;
     }
 
     .services .serv-content {

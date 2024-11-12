@@ -330,14 +330,12 @@ section .title::after {
 .skills .skills-content .left p {
     text-align: justify;
     margin-bottom: 40px;
-    max-width: 90%;
 }
 
 .skills .skills-content .right .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    max-width: 90%;
     border-radius: 8px;
     background: #fff;
     align-items: center;
@@ -755,6 +753,10 @@ footer span {
     .skills .skills-content .column {
         width: 100%;
         margin-bottom: 35px;
+    }
+
+    .skills .skills-content .left p {
+        max-width: 500px;
     }
 
     .services .serv-content {

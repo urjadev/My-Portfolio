@@ -184,11 +184,11 @@ document.getElementById("linkdin").addEventListener("click", () => {
 });
 
 document.getElementById("medium").addEventListener("click", () => {
-    window.open("https://urja1409.github.io/Medium-clone/", "_blank");
+    window.open("https://urjadev.github.io/Medium-clone/", "_blank");
 });
 
 document.getElementById("game").addEventListener("click", () => {
-    window.open("https://urja1409.github.io/Rock-Paper-Scissors-Game/", "_blank");
+    window.open("https://urjadev.github.io/Rock-Paper-Scissors-Game/", "_blank");
 });
 
 

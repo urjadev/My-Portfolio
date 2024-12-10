@@ -191,4 +191,8 @@ document.getElementById("game").addEventListener("click", () => {
     window.open("https://urjadev.github.io/Rock-Paper-Scissors-Game/", "_blank");
 });
 
+document.getElementById("netflix").addEventListener("click", () => {
+    window.open("https://urjadev.github.io/Netflix-Clone/", "_blank");
+});
+
 

@@ -82,11 +82,12 @@ ScrollReveal({ reset: true }).reveal(".skills", {
 // ------------------------------------------------------PROGRESS BAR SCRIPT ENDS-----------------------------------------------------------
 
 // ----------------------------------------------------------------CONTACT FORM VALIDATION---------------------------------------------------
-const scriptURL =
-    "https://script.google.com/macros/s/AKfycbyNI42iyvGZ4ZYquwFQBjHxEb_jgOyEgWOHLPITova4NW7vINQ_qFs6AbN44VgDMvz5/exec";
-const form = document.forms["submit-to-google-sheet"];
+const form = document.getElementById("form");
+const result = document.getElementById("submitted-msg");
 
-document.getElementById("submit").addEventListener("click", () => {
+document.getElementById("submit").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default form submission
+
     const Name = document.getElementById("name-field");
     const Email = document.getElementById("email-field");
     const Subject = document.getElementById("sub-field");
@@ -94,28 +95,26 @@ document.getElementById("submit").addEventListener("click", () => {
 
     const mailError = document.getElementById("mail-error");
     const MsgError = document.getElementById("msg-error");
-    const SubmittedMsg = document.getElementById("submitted-msg");
 
     let isValid = true;
 
-    // Check if any field is empty
+    // Validation
     if (
         Name.value.trim() === "" ||
         Email.value.trim() === "" ||
         Subject.value.trim() === "" ||
         Message.value.trim() === ""
     ) {
-        SubmittedMsg.style.display = "block";
-        SubmittedMsg.textContent = "*Please fill out all the fields";
-        SubmittedMsg.style.color = "#f83737";
-        SubmittedMsg.style.fontSize = "15px";
+        result.style.display = "block";
+        result.textContent = "*Please fill out all the fields";
+        result.style.color = "#f83737";
+        result.style.fontSize = "15px";
         isValid = false;
 
         setTimeout(() => {
-            SubmittedMsg.style.display = "none";
+            result.style.display = "none";
         }, 3000);
     } else {
-        // Email verification
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(Email.value.trim())) {
             mailError.textContent = "Please enter a valid email address";
@@ -127,7 +126,6 @@ document.getElementById("submit").addEventListener("click", () => {
             }, 2000);
         }
 
-        // Message length verification
         if (Message.value.trim().length > 60) {
             MsgError.textContent = "Message should be 60 characters or less";
             MsgError.style.display = "block";
@@ -139,54 +137,63 @@ document.getElementById("submit").addEventListener("click", () => {
         }
     }
 
-    // Submit if all validations pass
+    // Submit form if valid
     if (isValid) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            fetch(scriptURL, { method: "POST", body: new FormData(form) })
-                .then((response) => {
-                    console.log("Success!", response);
+        result.style.display = "block"
+        result.innerHTML = "Please wait...";
+        result.style.color = "black";
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
-                    // Display success message
-                    SubmittedMsg.textContent = `Thanks! I’ll get back to you shortly :)`;
-                    SubmittedMsg.style.display = "block";
-                    SubmittedMsg.style.color = "black";
-                    setTimeout(() => {
-                        SubmittedMsg.style.display = "none";
-                    }, 5000);
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: json,
+        })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status === 200) {
+                    result.style.display = "block"
+                    result.innerHTML = `Thanks! I’ll get back to you shortly :)`;
+                    result.style.color = "black";
+                } else {
+                    result.style.display = "block"
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                result.style.display = "block"
+                result.innerHTML = "Something went wrong!";
+            })
+            .finally(() => {
+                // Reset form and hide result message
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 5000);
+            });
 
-                    // Clear form fields
-                    Name.value = "";
-                    Email.value = "";
-                    Subject.value = "";
-                    Message.value = "";
-
-                    // Change icon on submit button
-                    setTimeout(() => {
-                        document.querySelector("#submit i").classList = "fa-solid fa-check";
-
-                        setTimeout(() => {
-                            document.querySelector("#submit i").classList =
-                                "fa-solid fa-paper-plane";
-                        }, 5000);
-                    }, 800);
-                })
-                .catch((error) => {
-                    alert(`Error! ${error.message}`);
-                });
-        });
+        // Change submit button icon
+        setTimeout(() => {
+            document.querySelector("#submit i").classList = "fa-solid fa-check";
+            setTimeout(() => {
+                document.querySelector("#submit i").classList =
+                    "fa-solid fa-paper-plane";
+            }, 5000);
+        }, 800);
     }
 });
+
 
 // --------------------------------------------------------------------NAVIGATIONS-----------------------------------------------------
 document.getElementById("linkdin").addEventListener("click", () => {
     window.open("https://www.linkedin.com/in/urja-angre-26241a321/", "_blank");
 });
-
-document.getElementById("medium").addEventListener("click", () => {
-    window.open("https://urjadev.github.io/Medium-clone/", "_blank");
-});
-
 document.getElementById("game").addEventListener("click", () => {
     window.open("https://urjadev.github.io/Rock-Paper-Scissors-Game/", "_blank");
 });

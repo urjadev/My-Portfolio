@@ -502,7 +502,8 @@ section .title::after {
 }
 
 #emailAdd:hover,
-#linkdin:hover {
+#linkdin:hover,
+#git:hover {
     color: #7755e6;
 }
 

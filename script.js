@@ -191,6 +191,9 @@ document.getElementById("submit").addEventListener("click", (e) => {
 
 
 // --------------------------------------------------------------------NAVIGATIONS-----------------------------------------------------
+document.getElementById("git").addEventListener("click", () => {
+    window.open("https://github.com/urjadev", "_blank");
+});
 document.getElementById("linkdin").addEventListener("click", () => {
     window.open("https://www.linkedin.com/in/urja-angre-26241a321/", "_blank");
 });
@@ -200,6 +203,9 @@ document.getElementById("game").addEventListener("click", () => {
 
 document.getElementById("netflix").addEventListener("click", () => {
     window.open("https://urjadev.github.io/Netflix-Clone/", "_blank");
+});
+document.getElementById("currencyConvertor").addEventListener("click", () => {
+    window.open("https://urjadev.netlify.app/", "_blank");
 });
 
 

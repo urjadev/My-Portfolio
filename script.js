@@ -22,8 +22,8 @@ $(document).ready(function () {
 // --------------------------------------------------------------------CV DOWNLOAD-------------------------------------------------------------
 document.getElementById("download-cv").addEventListener("click", () => {
     const link = document.createElement("a");
-    link.href = "Assets/UrjaAngre_CV.pdf";
-    link.download = "UrjaAngre_CV.pdf";
+    link.href = "Assets/Urja_Angre_CV.pdf";
+    link.download = "Urja_Angre_CV.pdf";
     link.click();
 });
 

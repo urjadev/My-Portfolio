@@ -511,6 +511,19 @@ section .title::after {
     display: block;
 }
 
+.contact .contact-content .right{
+    width: 500px;
+    height: 400px;
+}
+
+.contact .contact-content .right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    border-radius: 10px;
+}
+
 /* --------------------------------------------------------------FOOTER STYLING------------------------------------------------------------- */
 footer {
     background: #111;
@@ -540,6 +553,12 @@ footer span {
     .home .max-width {
         width: 100%;
     }
+
+    .contact .contact-content .right{
+       width: 400px;
+       height: 300px;
+    }
+   
 }
 
 @media (max-width: 991px) {
@@ -646,6 +665,11 @@ footer span {
     .services .serv-content .card {
         margin-bottom: 20px;
     }
+
+    .contact .contact-content .right{
+        display: none;
+    }
+   
 }
 
 @media (max-width: 690px) {
@@ -677,6 +701,8 @@ footer span {
     .services .serv-content .card {
         margin-bottom: 20px;
     }
+
+   
 }
 
 @media (max-width: 600px) {

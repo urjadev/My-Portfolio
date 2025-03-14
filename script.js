@@ -19,13 +19,7 @@ $(document).ready(function () {
     });
 });
 
-// --------------------------------------------------------------------CV DOWNLOAD-------------------------------------------------------------
-document.getElementById("download-cv").addEventListener("click", () => {
-    const link = document.createElement("a");
-    link.href = "Assets/Urja_Angre_CV.pdf";
-    link.download = "Urja_Angre_CV.pdf";
-    link.click();
-});
+
 
 // --------------------------------------------------------------------PROGRESS BAR-------------------------------------------------------------
 let circularProgressBars = [
@@ -81,115 +75,6 @@ ScrollReveal({ reset: true }).reveal(".skills", {
 
 // ------------------------------------------------------PROGRESS BAR SCRIPT ENDS-----------------------------------------------------------
 
-// ----------------------------------------------------------------CONTACT FORM VALIDATION---------------------------------------------------
-const form = document.getElementById("form");
-const result = document.getElementById("submitted-msg");
-
-document.getElementById("submit").addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent default form submission
-
-    const Name = document.getElementById("name-field");
-    const Email = document.getElementById("email-field");
-    const Subject = document.getElementById("sub-field");
-    const Message = document.getElementById("msg-field");
-
-    const mailError = document.getElementById("mail-error");
-    const MsgError = document.getElementById("msg-error");
-
-    let isValid = true;
-
-    // Validation
-    if (
-        Name.value.trim() === "" ||
-        Email.value.trim() === "" ||
-        Subject.value.trim() === "" ||
-        Message.value.trim() === ""
-    ) {
-        result.style.display = "block";
-        result.textContent = "*Please fill out all the fields";
-        result.style.color = "#f83737";
-        result.style.fontSize = "15px";
-        isValid = false;
-
-        setTimeout(() => {
-            result.style.display = "none";
-        }, 3000);
-    } else {
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailPattern.test(Email.value.trim())) {
-            mailError.textContent = "Please enter a valid email address";
-            mailError.style.display = "block";
-            isValid = false;
-
-            setTimeout(() => {
-                mailError.style.display = "none";
-            }, 2000);
-        }
-
-        if (Message.value.trim().length > 60) {
-            MsgError.textContent = "Message should be 60 characters or less";
-            MsgError.style.display = "block";
-            isValid = false;
-
-            setTimeout(() => {
-                MsgError.style.display = "none";
-            }, 2000);
-        }
-    }
-
-    // Submit form if valid
-    if (isValid) {
-        result.style.display = "block"
-        result.innerHTML = "Please wait...";
-        result.style.color = "black";
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: json,
-        })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status === 200) {
-                    result.style.display = "block"
-                    result.innerHTML = `Thanks! I’ll get back to you shortly :)`;
-                    result.style.color = "black";
-                } else {
-                    result.style.display = "block"
-                    result.innerHTML = json.message;
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-                result.style.display = "block"
-                result.innerHTML = "Something went wrong!";
-            })
-            .finally(() => {
-                // Reset form and hide result message
-                form.reset();
-                setTimeout(() => {
-                    result.style.display = "none";
-                }, 5000);
-            });
-
-        // Change submit button icon
-        setTimeout(() => {
-            document.querySelector("#submit i").classList = "fa-solid fa-check";
-            setTimeout(() => {
-                document.querySelector("#submit i").classList =
-                    "fa-solid fa-paper-plane";
-            }, 5000);
-        }, 800);
-    }
-});
-
-
 // --------------------------------------------------------------------NAVIGATIONS-----------------------------------------------------
 document.getElementById("git").addEventListener("click", () => {
     window.open("https://github.com/urjadev", "_blank");
@@ -205,5 +90,3 @@ document.getElementById("game").addEventListener("click", () => {
 document.getElementById("currencyConvertor").addEventListener("click", () => {
     window.open("https://urjadev.netlify.app/", "_blank");
 });
-
-

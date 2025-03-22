@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
 });
 
-
+// --------------------------------------------------------------------CV DOWNLOAD-------------------------------------------------------------
 
 // --------------------------------------------------------------------PROGRESS BAR-------------------------------------------------------------
 let circularProgressBars = [
@@ -75,6 +75,9 @@ ScrollReveal({ reset: true }).reveal(".skills", {
 
 // ------------------------------------------------------PROGRESS BAR SCRIPT ENDS-----------------------------------------------------------
 
+// ----------------------------------------------------------------CONTACT FORM VALIDATION---------------------------------------------------
+
+
 // --------------------------------------------------------------------NAVIGATIONS-----------------------------------------------------
 document.getElementById("git").addEventListener("click", () => {
     window.open("https://github.com/urjadev", "_blank");
@@ -86,7 +89,12 @@ document.getElementById("game").addEventListener("click", () => {
     window.open("https://urjadev.github.io/Rock-Paper-Scissors-Game/", "_blank");
 });
 
-
 document.getElementById("currencyConvertor").addEventListener("click", () => {
     window.open("https://urjadev.netlify.app/", "_blank");
 });
+
+document.getElementById("newsapp").addEventListener("click", () => {
+    window.open("https://trendtimesnews.netlify.app/", "_blank");
+});
+
+
